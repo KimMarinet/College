@@ -29,6 +29,7 @@ class MyClosetWindow(QDialog, QWidget, Ui_Dialog):
         inputID = printID()
         
         clotheName = self.lineEdit_Name.text()
+        updown = self.GetUpDown()
         material = self.GetMaterial()
         color = self.GetColor()
         sleeves = self.Getsleeves()
@@ -37,10 +38,10 @@ class MyClosetWindow(QDialog, QWidget, Ui_Dialog):
 
         conn = pymysql.connect(host='127.0.0.1', user='root', passwd='dlshfl^^7850', db='dressCode', charset='utf8')
         cur = conn.cursor()
-        sql = "CREATE TABLE IF NOT EXISTS " + inputID + "ClosetTable (name char(50), material char(50), color char(50), sleeves char(50))"
+        sql = "CREATE TABLE IF NOT EXISTS " + inputID + "ClosetTable (name char(50), updown char(20), material char(50), color char(50), sleeves char(50))"
         cur.execute(sql)
 
-        sql = "INSERT INTO "+ inputID +"ClosetTable VALUES('"+ clotheName + "','" + material + "','" + color + "','" + sleeves + "')"
+        sql = "INSERT INTO "+ inputID +"ClosetTable VALUES('"+ clotheName + "','" + updown + "','" + material + "','" + color + "','" + sleeves + "')"
         cur.execute(sql)
 
         conn.commit()
@@ -56,6 +57,7 @@ class MyClosetWindow(QDialog, QWidget, Ui_Dialog):
         cur.execute("select * from "+ inputID + "ClosetTable")
 
         ClotheName = self.lineEdit_SearchName.text()
+        updown = self.lineEdit_SearchUpDown.text()
         material = self.lineEdit_SearchMaterial.text()
         color = self.lineEdit_SearchColor.text()
         sleeves = self.lineEdit_SearchSleeve.text()
@@ -67,14 +69,25 @@ class MyClosetWindow(QDialog, QWidget, Ui_Dialog):
             row = cur.fetchone()
             if row == None:
                 break
-            if ClotheName == row[0] or material == row[1] or color == row[2] or sleeves == row[3]:
+            if ClotheName == row[0] or updown == row[1] or material == row[2] or color == row[3] or sleeves == row[4]:
                 if(i <= 20):
-                    for j in range(4):
+                    for j in range(5):
                         self.tableWidget.setItem(i,j,QTableWidgetItem(str(row[j])))
                     i += 1
 
     def Back(self):
         self.close()
+
+    def GetUpDown(self):
+        updown =""
+        if(self.btn_Up.isChecked()):
+            updown = self.btn_Up.text()
+        elif(self.btn_Down.isChecked()):
+            updown = self.btn_Down.text()
+        else:
+            updown = "정보 없음"
+        
+        return updown
 
     def GetMaterial(self):
         material = ""
