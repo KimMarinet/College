@@ -113,7 +113,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Material</string>
+    <string>Tpye</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -175,9 +175,44 @@
      </widget>
     </item>
     <item>
+     <widget class="QRadioButton" name="btn_orange">
+      <property name="text">
+       <string>주황</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="btn_yellow">
+      <property name="text">
+       <string>노랑</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="btn_green">
+      <property name="text">
+       <string>초록</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QRadioButton" name="btn_Blue">
       <property name="text">
        <string>파랑</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="btn_indigo">
+      <property name="text">
+       <string>남색</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="btn_pupple">
+      <property name="text">
+       <string>보라</string>
       </property>
      </widget>
     </item>
@@ -194,30 +229,27 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_6">
     <item>
-     <widget class="QRadioButton" name="btn_Wool">
+     <widget class="QRadioButton" name="btn_Up">
       <property name="text">
-       <string>울</string>
+       <string>상의</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QRadioButton" name="btn_Cotton">
+     <widget class="QRadioButton" name="btn_Down">
       <property name="text">
-       <string>면</string>
+       <string>하의</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="btn_Out">
+      <property name="text">
+       <string>겉옷</string>
       </property>
      </widget>
     </item>
    </layout>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_Name">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>80</y>
-     <width>113</width>
-     <height>20</height>
-    </rect>
-   </property>
   </widget>
   <widget class="QLabel" name="label_6">
    <property name="geometry">
@@ -229,7 +261,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Name</string>
+    <string>Brand</string>
    </property>
   </widget>
   <widget class="QTextEdit" name="textEdit_state">
@@ -272,9 +304,6 @@
      <widget class="QLineEdit" name="lineEdit_SearchUpDown"/>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEdit_SearchMaterial"/>
-    </item>
-    <item>
      <widget class="QLineEdit" name="lineEdit_SearchColor"/>
     </item>
     <item>
@@ -299,26 +328,13 @@
     </rect>
    </property>
    <property name="text">
-    <string>Name</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_8">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>330</y>
-     <width>56</width>
-     <height>12</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Material</string>
+    <string>Brand</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>380</x>
+     <x>320</x>
      <y>330</y>
      <width>56</width>
      <height>12</height>
@@ -331,7 +347,7 @@
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>500</x>
+     <x>470</x>
      <y>330</y>
      <width>56</width>
      <height>12</height>
@@ -341,44 +357,44 @@
     <string>Sleeve</string>
    </property>
   </widget>
-  <widget class="QWidget" name="verticalLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>110</y>
-     <width>131</width>
-     <height>171</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <widget class="QRadioButton" name="btn_Up">
-      <property name="text">
-       <string>상의</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QRadioButton" name="btn_Down">
-      <property name="text">
-       <string>하의</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>180</x>
      <y>330</y>
      <width>56</width>
      <height>12</height>
     </rect>
    </property>
    <property name="text">
-    <string>UpDown</string>
+    <string>Type</string>
    </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>141</width>
+     <height>201</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QRadioButton" name="btn_nike">
+      <property name="text">
+       <string>Nike</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="btn_adidas">
+      <property name="text">
+       <string>Adidas</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

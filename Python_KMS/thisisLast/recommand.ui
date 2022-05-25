@@ -6,9 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>795</width>
-    <height>558</height>
+    <width>1031</width>
+    <height>585</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>서울남산 장체B</family>
+    <weight>50</weight>
+    <bold>false</bold>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -16,8 +23,8 @@
   <widget class="QWidget" name="verticalLayoutWidget_4">
    <property name="geometry">
     <rect>
-     <x>630</x>
-     <y>40</y>
+     <x>870</x>
+     <y>50</y>
      <width>121</width>
      <height>25</height>
     </rect>
@@ -47,52 +54,101 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="verticalLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>510</y>
-     <width>771</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <widget class="QPushButton" name="btn_Recommand">
-      <property name="text">
-       <string>Recommand</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QWidget" name="horizontalLayoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>120</y>
-     <width>221</width>
-     <height>371</height>
+     <x>540</x>
+     <y>140</y>
+     <width>451</width>
+     <height>181</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_3">
     <item>
-     <widget class="QTextEdit" name="textEdit_Out"/>
+     <widget class="QTableWidget" name="tableWidget_down">
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="rowCount">
+       <number>20</number>
+      </property>
+      <property name="columnCount">
+       <number>4</number>
+      </property>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+     </widget>
     </item>
    </layout>
   </widget>
   <widget class="QWidget" name="horizontalLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>120</y>
-     <width>221</width>
-     <height>371</height>
+     <x>50</x>
+     <y>360</y>
+     <width>451</width>
+     <height>191</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QTextEdit" name="textEdit_Down"/>
+     <widget class="QTableWidget" name="tableWidget_out">
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="rowCount">
+       <number>20</number>
+      </property>
+      <property name="columnCount">
+       <number>4</number>
+      </property>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -100,22 +156,56 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>120</y>
-     <width>221</width>
-     <height>371</height>
+     <y>140</y>
+     <width>451</width>
+     <height>181</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QTextEdit" name="textEdit_Up"/>
+     <widget class="QTableWidget" name="tableWidget_up">
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="rowCount">
+       <number>20</number>
+      </property>
+      <property name="columnCount">
+       <number>4</number>
+      </property>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+     </widget>
     </item>
    </layout>
   </widget>
   <widget class="QWidget" name="verticalLayoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>630</x>
-     <y>10</y>
+     <x>870</x>
+     <y>20</y>
      <width>121</width>
      <height>25</height>
     </rect>
@@ -129,6 +219,64 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>120</y>
+     <width>56</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>상의</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>120</y>
+     <width>56</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>하의</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>340</y>
+     <width>56</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>겉옷</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_Recommand">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>460</y>
+     <width>289</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>휴먼엑스포</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>추천해줘!</string>
+   </property>
   </widget>
  </widget>
  <resources/>
@@ -172,12 +320,12 @@
    <slot>recommand()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>567</x>
-     <y>530</y>
+     <x>978</x>
+     <y>516</y>
     </hint>
     <hint type="destinationlabel">
-     <x>775</x>
-     <y>471</y>
+     <x>776</x>
+     <y>468</y>
     </hint>
    </hints>
   </connection>

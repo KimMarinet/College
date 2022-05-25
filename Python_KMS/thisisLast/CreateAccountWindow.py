@@ -64,7 +64,7 @@ class CreateAccountWindow(QDialog, QWidget, Ui_Dialog):
             sql = "INSERT INTO usertable VALUES('" + inputNewID + "','" + inputNewPW + "','" + userName + "'," + inputNewPNumber + ")"
             cur.execute(sql)
 
-            sql = "CREATE TABLE IF NOT EXISTS " + inputNewID + "ClosetTable (name char(50), updown char(20), material char(50), color char(50), sleeves char(50))"
+            sql = "CREATE TABLE IF NOT EXISTS " + inputNewID + "ClosetTable (brand char(50), type char(20), color char(50), sleeves char(50))"
             cur.execute(sql)
 
             conn.commit()

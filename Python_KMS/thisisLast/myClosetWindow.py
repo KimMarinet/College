@@ -28,9 +28,8 @@ class MyClosetWindow(QDialog, QWidget, Ui_Dialog):
 
         inputID = printID()
         
-        clotheName = self.lineEdit_Name.text()
-        updown = self.GetUpDown()
-        material = self.GetMaterial()
+        brand = self.GetBrand()
+        tpye = self.GetType()
         color = self.GetColor()
         sleeves = self.Getsleeves()
 
@@ -38,10 +37,10 @@ class MyClosetWindow(QDialog, QWidget, Ui_Dialog):
 
         conn = pymysql.connect(host='127.0.0.1', user='root', passwd='dlshfl^^7850', db='dressCode', charset='utf8')
         cur = conn.cursor()
-        sql = "CREATE TABLE IF NOT EXISTS " + inputID + "ClosetTable (name char(50), updown char(20), material char(50), color char(50), sleeves char(50))"
+        sql = "CREATE TABLE IF NOT EXISTS " + inputID + "ClosetTable (brand char(50), type char(20), color char(50), sleeves char(50))"
         cur.execute(sql)
 
-        sql = "INSERT INTO "+ inputID +"ClosetTable VALUES('"+ clotheName + "','" + updown + "','" + material + "','" + color + "','" + sleeves + "')"
+        sql = "INSERT INTO "+ inputID +"ClosetTable VALUES('"+ brand + "','" + tpye + "','" + color + "','" + sleeves + "')"
         cur.execute(sql)
 
         conn.commit()
@@ -56,9 +55,8 @@ class MyClosetWindow(QDialog, QWidget, Ui_Dialog):
         cur = conn.cursor()
         cur.execute("select * from "+ inputID + "ClosetTable")
 
-        ClotheName = self.lineEdit_SearchName.text()
-        updown = self.lineEdit_SearchUpDown.text()
-        material = self.lineEdit_SearchMaterial.text()
+        brand = self.lineEdit_SearchName.text()
+        type = self.lineEdit_SearchUpDown.text()
         color = self.lineEdit_SearchColor.text()
         sleeves = self.lineEdit_SearchSleeve.text()
         
@@ -69,45 +67,57 @@ class MyClosetWindow(QDialog, QWidget, Ui_Dialog):
             row = cur.fetchone()
             if row == None:
                 break
-            if ClotheName == row[0] or updown == row[1] or material == row[2] or color == row[3] or sleeves == row[4]:
-                if(i <= 20):
-                    for j in range(5):
+            if brand == row[0] or type == row[1] or color == row[2] or sleeves == row[3]:
+                if(i < 20):
+                    for j in range(4):
                         self.tableWidget.setItem(i,j,QTableWidgetItem(str(row[j])))
                     i += 1
 
     def Back(self):
         self.close()
 
-    def GetUpDown(self):
-        updown =""
-        if(self.btn_Up.isChecked()):
-            updown = self.btn_Up.text()
-        elif(self.btn_Down.isChecked()):
-            updown = self.btn_Down.text()
+    def GetBrand(self):
+        brand =""
+        if(self.btn_nike.isChecked()):
+            brand = self.btn_nike.text()
+        elif(self.btn_adidas.isChecked()):
+            brand = self.btn_adidas.text()
         else:
-            updown = "정보 없음"
+            brand = "정보 없음"
         
-        return updown
+        return brand
 
-    def GetMaterial(self):
-        material = ""
-        if(self.btn_Cotton.isChecked()):
-            material = self.btn_Cotton.text()
-        elif(self.btn_Wool.isChecked()):
-            material = self.btn_Wool.text()
+    def GetType(self):
+        type =""
+        if(self.btn_Up.isChecked()):
+            type = self.btn_Up.text()
+        elif(self.btn_Down.isChecked()):
+            type = self.btn_Down.text()
+        elif(self.btn_Out.isChecked()):
+            type = self.btn_Out.text()
         else:
-            material = "재질 정보 없음"
+            type = "정보 없음"
         
-        return material
+        return type
     
     def GetColor(self):
         color = ""
         if(self.btn_Red.isChecked()):
             color = self.btn_Red.text()
+        elif(self.btn_orange.isChecked()):
+            color = self.btn_orange.text()
+        elif(self.btn_yellow.isChecked()):
+            color = self.btn_yellow.text()
+        elif(self.btn_green.isChecked()):
+            color = self.btn_green.text()
         elif(self.btn_Blue.isChecked()):
             color = self.btn_Blue.text()
+        elif(self.btn_indigo.isChecked()):
+            color = self.btn_indigo.text()
+        elif(self.btn_pupple.isChecked()):
+            color = self.btn_pupple.text()
         else:
-            color = "색상 정보 없음"
+            color = "정보 없음"
         
         return color
 
@@ -118,6 +128,6 @@ class MyClosetWindow(QDialog, QWidget, Ui_Dialog):
         elif(self.btn_Long.isChecked()):
             sleeves = self.btn_Long.text()
         else:
-            sleeves = "소매 정보 없음"
+            sleeves = "정보 없음"
         
         return sleeves
